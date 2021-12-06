@@ -55,7 +55,7 @@ function fun2()
 function openForm2() {
   document.getElementById("myForm").style.display = "none";
   document.getElementById("myForm2").style.display = "block";
-  document.getElementsByClassName("nav-btn")[0].style.display = "block";
+  // document.getElementsByClassName("nav-btn")[0].style.display = "block";
 }
 
 function closeForm2() {
@@ -100,7 +100,6 @@ let image_data_url;
   }
 })();
 
-
 function ListingView() {
   let one           = document.querySelector("#one");
   let two           = document.querySelector("#two");
@@ -137,3 +136,19 @@ function ListingView() {
   }
 }
 
+
+window.addEventListener('load', function(e) {
+  if (!navigator.onLine) {
+    alert('We\'re offline...');
+  } else {
+    alert('We\'re online!');
+  }
+}, false);
+
+window.addEventListener('online', function(e) {
+  alert('And we\'re back :).');
+}, false);
+
+window.addEventListener('offline', function(e) {
+  alert('Connection is down. Please connect to Internet.');
+}, false);

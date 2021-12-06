@@ -87,7 +87,6 @@ function InserData() {
   } else {
     id = UserData.email.split(".").join();
   }
-  checkInternetConnection();
   set(ref(db, formData.type + "/" + id + "," + formData.type), {
     ...formData,
   })
@@ -99,7 +98,6 @@ function InserData() {
     .catch((err) => alert("error" + err));
 
   if (checkView.value != "volunteer") {
-    checkInternetConnection();
     set(ref(db, "restaurant" + "/" + id + "," + "restaurant"), {
       ...UserData,
     })
@@ -116,7 +114,6 @@ function SelectData() {
   const type = document.querySelector("#join2").value;
   const id = email.split(".").join();
   const dbref = ref(db);
-  checkInternetConnection();
   get(child(dbref, type + "/" + id + "," + type)).then((snapshot) => {
     if (snapshot.exists()) {
       if (password == snapshot.val().password) {
@@ -178,7 +175,6 @@ async function UpdateData() {
   const toSession = await JSON.stringify(userData);
 
   sessionStorage.setItem("userData", toSession);
-  checkInternetConnection();
   update(ref(db, userData.type + "/" + id + "," + userData.type), {
     ...userData,
   })
@@ -193,7 +189,6 @@ window.UpdateData = UpdateData;
 
 function GetAllListing() {
   const dbref = ref(db);
-  checkInternetConnection();
   get(child(dbref, "food")).then((snapshot) => {
     if (snapshot.exists()) {
       const listData = snapshot.val();
@@ -238,19 +233,9 @@ function GetAllListing() {
     }
   });
 }
-function checkInternetConnection() {
-  if (!navigator.onLine) {
-    alert("Internet Not Connected");
-    // document.querySelector("#no-internet").style.display = "block";
-  } else {
-    // document.querySelector("#no-internet").style.display = "none";
-    // alert("Internet Connected");
-  }
-}
 
 function GetReqListing() {
   const dbref = ref(db);
-  checkInternetConnection();
   get(child(dbref, "food-requests")).then((snapshot) => {
     if (snapshot.exists()) {
       const listData = snapshot.val();
@@ -306,11 +291,11 @@ function DynmicForm() {
                              
                               <input type="number" id="phoneNumber" placeholder="Phone" name="phoneNumber" required>
                               <input type="text" id="address" placeholder="Address" name="address" required>
-                              <label for="timing"><b>Closing Time</b></label>
+                              <label for="timing" class="text-left">Closing Time</label>
                               <input type="time" id="timing" name="timing" required>
                               <div class="dropdown">
-                              <label for="foodType"><b>Food Type</b></label>
                               <select name="sign-as" id="foodType" class="drop">
+                                  <option value='one' disabled selected>Food Type</option>
                                   <option value="one">Veg</option>
                                   <option value="two">Non Veg</option>
                                   <option value="three">Vegan</option>
@@ -354,7 +339,6 @@ function InserReq() {
   const uniqueId = Math.floor(Math.random() * 90000) + 10000;
 
   const id = reqData.email.split(".").join();
-  checkInternetConnection();
   set(ref(db, "food-requests" + "/" + id + "," + uniqueId + "," + type), {
     ...reqData,
   })
@@ -382,7 +366,6 @@ function AddFood() {
   reqData.uniqueId = uniqueId;
 
   // const id = reqData.email.split(".").join();
-  checkInternetConnection();
   set(ref(db, "food" + "/" + uniqueId), {
     ...reqData,
   })
@@ -539,7 +522,6 @@ function AddFood() {
       const urlParams = new URLSearchParams(queryString);
       const product = urlParams.get("id");
       const dbref = ref(db);
-      checkInternetConnection();
       get(child(dbref, "food" + "/" + product)).then((snapshot) => {
         if (snapshot.exists()) {
           let item = snapshot.val();

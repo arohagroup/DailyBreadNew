@@ -1,6 +1,6 @@
 {
-  "short_name": "TipCalc",
-  "name": "Tip Calculator",
+  "short_name": "dailybread",
+  "name": "Daily Bread",
   "icons": [
     {
       "src": "icons/app_icon_192x192.png",

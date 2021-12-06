@@ -29,7 +29,7 @@
         margin: 7px 0;
         transition: 0.5s;
         }
-        .center:hover:before {
+      /*   .center:hover:before {
         transform: translateY(12px) rotate(135deg);
         }
         .center:hover:after {
@@ -37,7 +37,7 @@
         }
         .center:hover div {
         transform: scale(0);
-        }
+        } */
 
     </style>
 </head>
@@ -62,16 +62,15 @@
         </div>
         <div class="nav-btn">
             
-            
-            <button type="button" class="btn-1" onclick="openForm()">LOGIN</button>
-            <button type="button" class="btn-2" onclick="openForm2()">SIGN UP</button>
+                <button type="button" class="btn-1" onclick="openForm()">Sign In</button>
+                <button type="button" class="btn-2" onclick="openForm2()">Sign Up</button>
 
             <div class="form-popup" id="myForm">
                 <form onsubmit="SelectData();event.preventDefault()" class="form-container">
-                    <h1>LOGIN</h1>
+                    <h2 class="text-left">Sign In</h2>
                     <br />
                      <div class="dropdown">
-                        <label><b>Login as</b></label>
+                        <label>Sign in as</label>
                         <select name="sign-as" id="join2" class="drop">
                             <option value="volunteer">Volunteer</option>
                             <option value="restaurant">Restaurant</option>
@@ -81,17 +80,17 @@
 
                     <input type="password" placeholder="Password" name="psw" id="secret2" required>
 
-                    <button type="submit" class="btn btn-2" id="login">LOGIN</button>
+                    <button type="submit" class="btn btn-2" id="login">Sign In</button>
                     <span id="cross" onclick="closeForm()"><a href="">X</a></span>
                 </form>
             </div>
 
             <div class="form-popup" id="myForm2">
                 <form class="form-container" onsubmit="InserData();event.preventDefault()">
-                    <h1>SIGN UP</h1>
+                    <h2 class="text-left">Sign Up</h2>
                     <br />
                     <div class="dropdown">
-                        <label><b>Register as</b></label>
+                        <label>Register as</label>
                         <select name="sign-as" id="join" class="drop">
                             <option value="volunteer">Volunteer</option>
                             <option value="restaurant">Restaurant</option>
@@ -111,7 +110,7 @@
                         <input type="number" id="phone" placeholder="Phone Number" name="phone" required>
                         <input type="password" id="secret" placeholder="Password" name="psw" required>
                     </div>
-                    <button type="submit" class="btn btn-2" id="insert">SIGN UP</button>
+                    <button type="submit" class="btn btn-2" id="insert">Sign Up</button>
                     <span id="cross" onclick="closeForm()"><a href="">X</a></span>
                 </form>
             </div>
