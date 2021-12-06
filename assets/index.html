@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="white"/>
+    <title>Daily Bread</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <link rel="manifest" href="manifest.json"/>
+    <link rel="apple-touch-icon" href="logo.png"/>
+    <style>
+        
+        .center {
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        }
+
+        .center:before,
+        .center:after,
+        .center div {
+        background: #000;
+        content: "";
+        display: block;
+        height: 6px;
+        border-radius: 3px;
+        margin: 7px 0;
+        transition: 0.5s;
+        }
+        .center:hover:before {
+        transform: translateY(12px) rotate(135deg);
+        }
+        .center:hover:after {
+        transform: translateY(-12px) rotate(-135deg);
+        }
+        .center:hover div {
+        transform: scale(0);
+        }
+
+    </style>
+</head>
+
+<body id="inedxPage">
+    <header class="header">
+        <div class="icon">
+            <a href="#" onclick="menu()"> 
+                <div class="center">
+                    <div></div>
+                </div>
+            </a>
+        </div>
+        <div class="nav-brand">
+           <img src="./assets/images/logo%20(1).png" />
+        </div>
+
+        <div class="nav">
+        <button type="button" class="btn-3" onclick="location.href = './home.html';">Partners</button>
+            <button type="button" class="btn-4" onclick="location.href = './home.html';">Statistics</button>
+            <button type="button" class="btn-5" onclick="location.href = './home.html';">About Us</button>  
+        </div>
+        <div class="nav-btn">
+            
+            
+            <button type="button" class="btn-1" onclick="openForm()">LOGIN</button>
+            <button type="button" class="btn-2" onclick="openForm2()">SIGN UP</button>
+
+            <div class="form-popup" id="myForm">
+                <form onsubmit="SelectData();event.preventDefault()" class="form-container">
+                    <h1>LOGIN</h1>
+                    <br />
+                     <div class="dropdown">
+                        <label><b>Login as</b></label>
+                        <select name="sign-as" id="join2" class="drop">
+                            <option value="volunteer">Volunteer</option>
+                            <option value="restaurant">Restaurant</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Email Address" id="email2" name="email" required>
+
+                    <input type="password" placeholder="Password" name="psw" id="secret2" required>
+
+                    <button type="submit" class="btn btn-2" id="login">LOGIN</button>
+                    <span id="cross" onclick="closeForm()"><a href="">X</a></span>
+                </form>
+            </div>
+
+            <div class="form-popup" id="myForm2">
+                <form class="form-container" onsubmit="InserData();event.preventDefault()">
+                    <h1>SIGN UP</h1>
+                    <br />
+                    <div class="dropdown">
+                        <label><b>Register as</b></label>
+                        <select name="sign-as" id="join" class="drop">
+                            <option value="volunteer">Volunteer</option>
+                            <option value="restaurant">Restaurant</option>
+                        </select>
+                    </div>
+                    <div id="formFields">
+                       <div class="row">
+                        <div class="col">
+                            <input type="text" id="fname" placeholder="First Name" name="fname" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="lname" placeholder="Last Name" name="lname" required>
+                        </div>
+                       </div>
+                        <input type="text" id="email" placeholder="Email Address" name="email" required>
+
+                        <input type="number" id="phone" placeholder="Phone Number" name="phone" required>
+                        <input type="password" id="secret" placeholder="Password" name="psw" required>
+                    </div>
+                    <button type="submit" class="btn btn-2" id="insert">SIGN UP</button>
+                    <span id="cross" onclick="closeForm()"><a href="">X</a></span>
+                </form>
+            </div>
+        </div>
+    </header>
+    <section class="first-section">
+        <div class="part-1">
+            <img src="./assets/images/Saly.png" />
+        </div>
+        <div class="part-2">
+            <div class="content">
+                <h2>
+                    We connect volunteers with
+                    restaurants and households
+                    to feed the homeless
+                </h2>
+                <p>
+                    DailyBread helps connect restaurants and volunteers to tackle
+                    food insecurity in Vancouver. Get started today and start
+                    making a difference
+                </p>
+                <div class="join-btn">
+                    <button type="button" class="btn-2" onclick="openForm2()">Join Us Today</button>
+                </div>
+              </div>
+        </div>
+    </section>
+     <script src="assets/js/script.js"></script>
+     <script src="assets/js/firebase.js" type="module"></script>
+     <script src="index.js"></script>
+</body>
+</html>

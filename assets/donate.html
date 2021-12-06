@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Bread</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+
+<body id="donatePage">
+    <header class="header">
+        <div class="icon">
+            <i class="fas fa-chevron-left" onclick="fun()"></i>
+        </div>
+        <div class="nav-brand">
+            <a href="home.html"><img src="./assets/images/logo%20(1).png" /></a>
+        </div>
+
+        <div class="nav">
+           
+        </div>
+        <div class="nav-btn">
+            <button type="button" class="btn-1"><a href="UserProfile.html"><i class="far fa-user-alt pr-1"></i>Profile</a></button>
+            
+        </div>
+    </header>
+
+    <section class="listing-section">
+        <div class="contain">
+            <div class="part-1" id="part1">
+                <div class="avtar">
+                    <img id="userImage" src="./assets/images/dumy.jpeg">
+                    <h4 id="view-name">Name Here</h4>
+                    <small id="view-type">Voliunteer</small>
+                </div>
+                <ul class="social-icons">
+                    <li><a href="https://twitter.com"><img src="./assets/images/twitter.png"></a></li>
+                    <li><a href="https://instagram.com"><img src="./assets/images/instagram.png"></a></li>
+                    <li><a href="https://linkedin.com"><img src="./assets/images/linkedin.png"></a></li>
+                </ul>
+                <ul class="side-nav">
+                     <a href="UserProfile.html"><li class="active"><i class="far fa-user-alt pr-2"></i>Profile</li></a>
+                    <a href="listing.html"><li><i class="fas fa-home pr-2"></i>Listing</li></a>
+                    <a href="history.html"><li><i class="fal fa-th-list pr-2"></i>Requests</li></a>
+                </ul>
+                 
+                <div id="create_donate_btn" class="message">
+                    <h4>Donate</h4>
+                    <p>Donation is always valuable and we should come up as much as we can.</p>
+                    <a href="/assets/donate.html"><button class="btn-2">Donate</button></a>
+                </div>
+                <div class="log-out">
+                    <button class="btn-1" id="logout"><img src="./assets/images/sign-out-alt-solid.svg">LOGOUT</button>
+                </div>
+            </div>
+
+            <div class="part-2" id="part2">
+                <div class="card-row">
+                    <div class="lable">
+                        <h3>Donations Offer <span><small></small></span></h3>
+                    </div>
+                </div>
+                <form onsubmit="event.preventDefault()" class="form-container">
+                    <h4>Donations You would like to Offer </h4>
+                    <input type="number" placeholder=" Amount to Donate" id="amount" name="amount" required>
+                    <input type="text" placeholder="Food Name" id="Name" name="foodName" required>
+
+                   
+
+                    <h4>Contact Information</h4>
+                    <input type="number" placeholder="Phone" id="phone" name="phone" required>
+                    <input type="text" placeholder="Address" name="address" id="address" required>
+
+                    <button type="submit" class="btn" id="food-btn">Donate</button>
+                </form>
+            </div>
+
+
+
+            <div class="part-3">
+                <div class="filters">
+                    <h2>Filters</h2>
+                    <br />
+                    <span>View Type</span>
+                    <br />
+                    <select>
+                        <option>Latest Listing First</option>
+                        <option>Initial Listing First</option>
+                        <option>Random</option>
+                    </select>
+                    <br />
+                    <br />
+                    <br />
+                    <h3>Food Type</h3>
+                    <br />
+                    <label class="container">Veg
+                        <input id="three" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Non Veg
+                        <input id="two" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Vegan
+                        <input id="three" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <br />
+                    <button class="btn-2" href="#" onclick="ListingView()">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="mobile-footer">
+        <div class="f1">
+            <i class="fas fa-home" onclick="location.href = './home.html';"></i>
+        </div>
+        <div class="f2">
+            <i class="fal fa-th-list" onclick="location.href = './listing.html';"></i>
+        </div>
+        <div class="f3">
+            <i class="far fa-user-alt" onclick="location.href = './UserProfile.html';"></i>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/firebase.js" type="module"></script>
+</body>
+</html>

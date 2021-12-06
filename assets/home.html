@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="white"/>
+    <title>Daily Bread</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="manifest" href="manifest.json"/>
+    <link rel="apple-touch-icon" href="logo.png"/>
+</head>
+
+<body id="homePage">
+    <header class="header">
+        <div class="icon">
+            <!-- <a href="#" onclick="menu()">&#x21C7;</a> -->
+            <i class="fas fa-chevron-left" onclick="location.href = './listing.html';"></i>
+        </div>
+        <div class="nav-brand">
+            <img src="./assets/images/logo%20(1).png" />
+        </div>
+
+        <div class="nav">
+        <button type="button" class="btn-3" onclick="location.href = './home.html';">Partners</button>
+            <button type="button" class="btn-4" onclick="location.href = './home.html';">Statistics</button>
+            <button type="button" class="btn-5" onclick="location.href = './home.html#About';">About Us</button>  
+        </div>
+        
+    </header>
+    <section class="first-section">
+        <div class="part-1">
+            <img src="./assets/images/Saly.png" />
+        </div>
+        <div class="part-2">
+            <div class="content" id="About">
+                <h2>
+                    We connect volunteers with
+                    restaurants and households
+                    to feed the homeless
+                </h2>
+                <p>
+                    DailyBread helps connect restaurants and volunteers to tackle
+                    food insecurity in Vancouver. Get started today and start
+                    making a difference
+                </p>
+                <button type="button" class="btn-2" onclick="location.href = './listing.html';">Get Started</button>
+              </div>
+        </div>
+    </section>
+     <script src="assets/js/firebase.js" type="module"></script>
+     <script src="assets/js/script.js"></script>
+     <script src="index.js"></script>
+</body>
+</html>

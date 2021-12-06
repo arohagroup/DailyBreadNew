@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Bread</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+
+<body id="mapsPage">
+    <header class="header">
+        <div class="icon">
+            <i class="fas fa-chevron-left" onclick="fun()"></i>
+        </div>
+        <div class="nav-brand">
+            <a href="home.html"><img src="./assets/images/logo%20(1).png" /></a>
+        </div>
+
+        <div class="nav">
+
+        </div>
+        <div class="nav-btn">
+            <button type="button" class="btn-1"><a href="UserProfile.html"><i class="far fa-user-alt pr-1"></i>Profile</a></button>
+
+        </div>
+    </header>
+
+    <section class="listing-mapsection">
+        <div class="contain">
+            <div class="part-1 map" id="part1">
+                <div class="avtar">
+                    <img id="userImage" src="./assets/images/dumy.jpeg">
+                    <h4 id="view-name">Name Here</h4>
+                    <small id="view-type">Volunteer</small>
+                </div>
+                <ul class="social-icons">
+                    <li><a href="https://twitter.com"><img src="./assets/images/twitter.png"></a></li>
+                    <li><a href="https://instagram.com"><img src="./assets/images/instagram.png"></a></li>
+                    <li><a href="https://linkedin.com"><img src="./assets/images/linkedin.png"></a></li>
+                </ul>
+                <ul class="side-nav">
+                    <a href="UserProfile.html"><li><i class="far fa-user-alt pr-2"></i>Profile</li></a>
+                    <a href="listing.html"><li><i class="fas fa-home pr-2"></i>Listing</li></a>
+                    <a href="history.html"><li><i class="fal fa-th-list pr-2"></i>Requests</li></a>
+                </ul>
+                <div id="create_listing_btn" class="message">
+                    <a href="/assets/AddFood.html"><button class="btn-2">Create New Listing</button></a>
+                </div>
+              
+                <div id="create_donate_btn" class="message">
+                    <h4>Donate</h4>
+                    <p>Donation is always valuable and we should come up as much as we can.</p>
+                    <a href="/assets/donate.html"><button class="btn-2">Donate</button></a>
+                </div>							
+                <div class="log-out">
+                    <button class="btn-1" id="logout"><img src="./assets/images/sign-out-alt-solid.svg">LOGOUT</button>
+                </div>
+            </div>
+
+            <div class="part2" id="part2" style="margin: 0 1%;">
+                <a class="mb-2" style="margin: 2%;" href="listing.html"> Back</a>
+                <div class="mt-2 lable" style="margin: 2%">
+                    <h3>Chipotle’s Listing</h3>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="avtar pt-2">
+                        <img src="./assets/images/dumy.jpeg">
+                         <h4 id="rest_name">Restaurant’s Name</h4>
+                        <p>Our food contains all the essentials nutrients </p><br />
+                        <p class="status-sucess">ACCEPTING REQUESTS</p>
+                         <p class="status-pending" id="pack_count">120/200 Packages Remaining</p>
+                         <div class= request-accept id="request-accept">  
+                         <br>
+                            <button  class="accept" id="accept" onclick="requestAccept()">ACCEPT <span class="fa fa-check"></span></button>
+                            <button href="#" class="deny" id="deny" onclick="requestAccept()">DENY <span class="fa fa-close"></span></button>
+                         </div>
+                        <!-- <button class="btn-2">Call Restaurant</button> -->
+                    </div>
+                </div>
+
+            </div>
+           
+            <div class="part3" id="part3" style="margin-top: 92px;">
+                <div class="map-card p-2">
+                    <p class="mb-2">Location</p>
+                    <h4>2395, East 41st Avenue, Vancouver BC</h4>
+                    <iframe class="mt-2" width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=2395,%20East%2041st%20Avenue,%20Vancouver%20BC&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+                <div class="pick-up-card p-2" id ="pick-up-card">
+                    <h4 class="">Request Pick-Up</h4>
+                    <div class="social">
+                          <form onsubmit="event.preventDefault()" class="form-container">
+                        <input type="number" class="input" id='reqPackages' placeholder="No. of Packages" required/>
+                        <input type="text" class="input" id='address' placeholder="Enter Address" required/>
+                        <button type="submit" class="btn-2" id='send-request'>Send Pickup Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+         </div>
+           
+    </section>
+    <div class="mobile-footer">
+        <div class="f1">
+            <i class="fas fa-home" onclick="location.href = './home.html';"></i>
+        </div>
+        <div class="f2">
+            <i class="fal fa-th-list" onclick="location.href = './listing.html';"></i>
+        </div>
+        <div class="f3">
+            <i class="far fa-user-alt" onclick="location.href = './UserProfile.html';"></i>
+        </div>
+    </div>
+
+    <div class="popup"  style="border:thin" id="myForm">
+        <div class="popup-content" id="sucess-pop">
+            <h4>Pickup Request Sent!</h4>
+            <p class="popup-sm-msg">Your request has been sent to the 
+                restaurant. <br> You will be notified once 
+                it’s accepted</p>
+            <button class="btn-2 popup-btn" onclick="closeForm()">Close</button>
+        </div>
+    </div>
+
+    <!-- <div class="popup" style="border:thin" id="myForm">
+        <div class="popup-content" id="req-sucess-pop">
+            <h1 style="color:blue;">Request Sent Successfully!!!</h1>
+            <br></br> 
+            <button type="button" class="btn-2" onclick="closeForm()">Ok</button>
+        </div> -->
+    
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/firebase.js" type="module"></script>
+</body>
+</html>
